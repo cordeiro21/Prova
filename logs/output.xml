@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on win32)" generated="20210623 18:41:10.238" rpa="false" schemaversion="2">
+<suite id="s1" name="Login" source="C:\Prova\tests\login.robot">
+<test id="s1-t1" name="Cadastro de Usuários">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:10.958" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:11.229" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:10.958" endtime="20210623 18:41:11.229"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:13.763" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:13.763" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:11.229" endtime="20210623 18:41:13.763"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:10.957" endtime="20210623 18:41:13.764"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:13.765" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:13.764" endtime="20210623 18:41:13.801"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:13.802" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:13.802" endtime="20210623 18:41:13.813"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:13.813" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:13.813" endtime="20210623 18:41:13.826"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:13.826" endtime="20210623 18:41:13.882"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:13.764" endtime="20210623 18:41:13.882"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=table th</arg>
+<arg>should be</arg>
+<arg>Id</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210623 18:41:13.882" endtime="20210623 18:41:13.899"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:14.017" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:13.900" endtime="20210623 18:41:14.018"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:10.955" endtime="20210623 18:41:14.018"/>
+</test>
+<test id="s1-t2" name="Campo nome em branco">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:14.039" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:14.287" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:14.038" endtime="20210623 18:41:14.287"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:16.615" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:16.615" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:14.287" endtime="20210623 18:41:16.615"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:14.038" endtime="20210623 18:41:16.616"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>${EMPTY}</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:16.618" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:16.618" endtime="20210623 18:41:16.647"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:16.647" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:16.647" endtime="20210623 18:41:16.663"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:16.663" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:16.663" endtime="20210623 18:41:16.674"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:16.674" endtime="20210623 18:41:16.727"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:16.617" endtime="20210623 18:41:16.727"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>O campo Nome é obrigatório.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:16.737" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=O campo Nome é obrigatório.</msg>
+<status status="PASS" starttime="20210623 18:41:16.728" endtime="20210623 18:41:16.737"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:16.728" endtime="20210623 18:41:16.737"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:16.925" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:16.738" endtime="20210623 18:41:16.925"/>
+</kw>
+<tag>nome</tag>
+<status status="PASS" starttime="20210623 18:41:14.036" endtime="20210623 18:41:16.925"/>
+</test>
+<test id="s1-t3" name="Campo email em branco">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:16.944" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:17.246" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:16.944" endtime="20210623 18:41:17.247"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:20.698" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:20.698" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:17.247" endtime="20210623 18:41:20.699"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:16.944" endtime="20210623 18:41:20.699"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>${EMPTY}</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:20.702" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:20.701" endtime="20210623 18:41:20.726"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:20.727" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:20.726" endtime="20210623 18:41:20.741"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:20.742" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:20.741" endtime="20210623 18:41:20.751"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:20.751" endtime="20210623 18:41:20.791"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:20.701" endtime="20210623 18:41:20.792"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>O campo E-mail é obrigatório.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:20.800" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=O campo E-mail é obrigatório.</msg>
+<status status="PASS" starttime="20210623 18:41:20.792" endtime="20210623 18:41:20.800"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:20.792" endtime="20210623 18:41:20.800"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:20.997" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:20.801" endtime="20210623 18:41:20.997"/>
+</kw>
+<tag>email</tag>
+<status status="PASS" starttime="20210623 18:41:16.941" endtime="20210623 18:41:20.998"/>
+</test>
+<test id="s1-t4" name="Campo senha em branco">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:21.029" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:21.281" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:21.029" endtime="20210623 18:41:21.281"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:23.332" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:23.332" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:21.282" endtime="20210623 18:41:23.334"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:21.028" endtime="20210623 18:41:23.334"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste@teste.com</arg>
+<arg>${EMPTY}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:23.335" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:23.334" endtime="20210623 18:41:23.363"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:23.363" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:23.363" endtime="20210623 18:41:23.373"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:23.373" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:23.373" endtime="20210623 18:41:23.386"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:23.386" endtime="20210623 18:41:23.445"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:23.334" endtime="20210623 18:41:23.445"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>O campo Senha é obrigatório.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:23.454" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=O campo Senha é obrigatório.</msg>
+<status status="PASS" starttime="20210623 18:41:23.446" endtime="20210623 18:41:23.454"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:23.446" endtime="20210623 18:41:23.454"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:23.641" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:23.454" endtime="20210623 18:41:23.641"/>
+</kw>
+<tag>senha</tag>
+<status status="PASS" starttime="20210623 18:41:21.026" endtime="20210623 18:41:23.642"/>
+</test>
+<test id="s1-t5" name="Campos nome, email e senha em branco">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:23.659" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:23.951" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:23.658" endtime="20210623 18:41:23.951"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:26.657" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:26.657" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:23.951" endtime="20210623 18:41:26.657"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:23.658" endtime="20210623 18:41:26.657"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:26.659" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:26.659" endtime="20210623 18:41:26.690"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:26.690" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:26.690" endtime="20210623 18:41:26.699"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:26.700" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:26.700" endtime="20210623 18:41:26.712"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:26.712" endtime="20210623 18:41:26.758"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:26.658" endtime="20210623 18:41:26.758"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>O campo Nome é obrigatório.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:26.768" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=O campo Nome é obrigatório.</msg>
+<status status="PASS" starttime="20210623 18:41:26.759" endtime="20210623 18:41:26.768"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:26.759" endtime="20210623 18:41:26.768"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>O campo E-mail é obrigatório.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:26.774" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=O campo E-mail é obrigatório.</msg>
+<status status="PASS" starttime="20210623 18:41:26.768" endtime="20210623 18:41:26.774"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:26.768" endtime="20210623 18:41:26.774"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>O campo Senha é obrigatório.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:26.780" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=O campo Senha é obrigatório.</msg>
+<status status="PASS" starttime="20210623 18:41:26.775" endtime="20210623 18:41:26.780"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:26.774" endtime="20210623 18:41:26.780"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:26.955" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-5.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:26.780" endtime="20210623 18:41:26.955"/>
+</kw>
+<tag>todos</tag>
+<status status="PASS" starttime="20210623 18:41:23.657" endtime="20210623 18:41:26.956"/>
+</test>
+<test id="s1-t6" name="Campo nome incompleto">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:26.973" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:27.268" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:26.972" endtime="20210623 18:41:27.268"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:29.487" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:29.487" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:27.268" endtime="20210623 18:41:29.487"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:26.972" endtime="20210623 18:41:29.487"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:29.489" level="INFO">Fills the text 'Rafael' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:29.488" endtime="20210623 18:41:29.523"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:29.523" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:29.523" endtime="20210623 18:41:29.532"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:29.532" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:29.532" endtime="20210623 18:41:29.545"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:29.545" endtime="20210623 18:41:29.591"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:29.488" endtime="20210623 18:41:29.591"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>Por favor, insira um nome completo.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:29.601" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=Por favor, insira um nome completo.</msg>
+<status status="PASS" starttime="20210623 18:41:29.592" endtime="20210623 18:41:29.601"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:29.592" endtime="20210623 18:41:29.601"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:29.792" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-6.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:29.601" endtime="20210623 18:41:29.792"/>
+</kw>
+<tag>incompleto</tag>
+<status status="PASS" starttime="20210623 18:41:26.971" endtime="20210623 18:41:29.792"/>
+</test>
+<test id="s1-t7" name="Campo email inválido">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:29.809" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:30.104" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:29.809" endtime="20210623 18:41:30.105"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:31.815" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:31.815" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:30.105" endtime="20210623 18:41:31.815"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:29.808" endtime="20210623 18:41:31.815"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste.teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:31.816" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:31.816" endtime="20210623 18:41:31.841"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:31.842" level="INFO">Fills the text 'teste.teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:31.841" endtime="20210623 18:41:31.852"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:31.853" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:31.853" endtime="20210623 18:41:31.862"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:31.862" endtime="20210623 18:41:31.907"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:31.816" endtime="20210623 18:41:31.907"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>Por favor, insira um e-mail válido.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:31.916" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=Por favor, insira um e-mail válido.</msg>
+<status status="PASS" starttime="20210623 18:41:31.907" endtime="20210623 18:41:31.916"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:31.907" endtime="20210623 18:41:31.916"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:32.109" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-7.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:31.916" endtime="20210623 18:41:32.109"/>
+</kw>
+<tag>email</tag>
+<status status="PASS" starttime="20210623 18:41:29.807" endtime="20210623 18:41:32.110"/>
+</test>
+<test id="s1-t8" name="Campo senha incompleto">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:32.125" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:32.424" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:32.125" endtime="20210623 18:41:32.424"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:34.935" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:34.935" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:32.424" endtime="20210623 18:41:34.936"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:32.125" endtime="20210623 18:41:34.936"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd123</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:34.937" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:34.937" endtime="20210623 18:41:34.970"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:34.971" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:34.971" endtime="20210623 18:41:34.980"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:34.981" level="INFO">Fills the text 'pwd123' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:34.980" endtime="20210623 18:41:34.995"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:34.995" endtime="20210623 18:41:35.043"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:34.937" endtime="20210623 18:41:35.043"/>
+</kw>
+<kw name="Form Error Should Be" library="auth">
+<arg>A senha deve conter ao menos 8 caracteres.</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.register-form .error &gt;&gt; text=${expect_text}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210623 18:41:35.051" level="INFO">Wait for Element with selector: css=.register-form .error &gt;&gt; text=A senha deve conter ao menos 8 caracteres.</msg>
+<status status="PASS" starttime="20210623 18:41:35.044" endtime="20210623 18:41:35.051"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:35.043" endtime="20210623 18:41:35.051"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:35.246" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-8.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:35.052" endtime="20210623 18:41:35.247"/>
+</kw>
+<tag>email</tag>
+<status status="PASS" starttime="20210623 18:41:32.123" endtime="20210623 18:41:35.247"/>
+</test>
+<test id="s1-t9" name="Cadastro com sucesso">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:35.265" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:35.525" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:35.265" endtime="20210623 18:41:35.525"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:38.076" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:38.076" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:35.525" endtime="20210623 18:41:38.076"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:35.264" endtime="20210623 18:41:38.076"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:38.077" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:38.077" endtime="20210623 18:41:38.108"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:38.109" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:38.108" endtime="20210623 18:41:38.119"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:38.120" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:38.120" endtime="20210623 18:41:38.128"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:38.128" endtime="20210623 18:41:38.178"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:38.076" endtime="20210623 18:41:38.178"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=table th</arg>
+<arg>should be</arg>
+<arg>Id</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210623 18:41:38.179" endtime="20210623 18:41:38.192"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:38.319" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-9.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:38.193" endtime="20210623 18:41:38.319"/>
+</kw>
+<tag>completo</tag>
+<status status="PASS" starttime="20210623 18:41:35.263" endtime="20210623 18:41:38.320"/>
+</test>
+<test id="s1-t10" name="Cadastro com sucesso 2">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:38.336" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:38.603" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:38.336" endtime="20210623 18:41:38.603"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:39.972" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:39.972" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:38.603" endtime="20210623 18:41:39.972"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:38.336" endtime="20210623 18:41:39.972"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:39.974" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:39.973" endtime="20210623 18:41:40.014"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:40.014" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:40.014" endtime="20210623 18:41:40.027"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:40.027" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:40.027" endtime="20210623 18:41:40.043"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:40.043" endtime="20210623 18:41:40.096"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:39.973" endtime="20210623 18:41:40.096"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Lucas Ribeiro</arg>
+<arg>lucas@teste.com</arg>
+<arg>pwd98765432</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:40.097" level="INFO">Fills the text 'Lucas Ribeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:40.097" endtime="20210623 18:41:40.107"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:40.108" level="INFO">Fills the text 'lucas@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:40.108" endtime="20210623 18:41:40.120"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:40.120" level="INFO">Fills the text 'pwd98765432' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:40.120" endtime="20210623 18:41:40.132"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:40.133" endtime="20210623 18:41:40.173"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:40.097" endtime="20210623 18:41:40.173"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=table th</arg>
+<arg>should be</arg>
+<arg>Id</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210623 18:41:40.174" endtime="20210623 18:41:40.192"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:40.321" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-10.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:40.192" endtime="20210623 18:41:40.321"/>
+</kw>
+<tag>completo2</tag>
+<status status="PASS" starttime="20210623 18:41:38.334" endtime="20210623 18:41:40.321"/>
+</test>
+<test id="s1-t11" name="Cadastro com exclusão">
+<kw name="Go To Login Page" library="auth">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210623 18:41:40.339" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210623 18:41:40.616" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210623 18:41:40.338" endtime="20210623 18:41:40.616"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://prova.stefanini-jgr.com.br/teste/qa/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210623 18:41:42.967" level="INFO">Successfully initialized new page object and opened url: http://prova.stefanini-jgr.com.br/teste/qa/</msg>
+<msg timestamp="20210623 18:41:42.967" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20210623 18:41:40.616" endtime="20210623 18:41:42.968"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:40.338" endtime="20210623 18:41:42.968"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Rafael Cordeiro</arg>
+<arg>teste@teste.com</arg>
+<arg>pwd12345678</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:42.969" level="INFO">Fills the text 'Rafael Cordeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:42.969" endtime="20210623 18:41:42.996"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:42.996" level="INFO">Fills the text 'teste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:42.996" endtime="20210623 18:41:43.006"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:43.006" level="INFO">Fills the text 'pwd12345678' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:43.006" endtime="20210623 18:41:43.015"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:43.015" endtime="20210623 18:41:43.063"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:42.969" endtime="20210623 18:41:43.063"/>
+</kw>
+<kw name="Login With" library="auth">
+<arg>Lucas Ribeiro</arg>
+<arg>lucas@teste.com</arg>
+<arg>pwd98765432</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=name]</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:43.064" level="INFO">Fills the text 'Lucas Ribeiro' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:43.064" endtime="20210623 18:41:43.073"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:43.073" level="INFO">Fills the text 'lucas@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:43.073" endtime="20210623 18:41:43.081"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210623 18:41:43.082" level="INFO">Fills the text 'pwd98765432' in the given field.</msg>
+<status status="PASS" starttime="20210623 18:41:43.082" endtime="20210623 18:41:43.093"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=.register-form button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:43.093" endtime="20210623 18:41:43.139"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:43.063" endtime="20210623 18:41:43.140"/>
+</kw>
+<kw name="Excluir" library="auth">
+<kw name="Click" library="Browser">
+<arg>//*[@id="removeUser1"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210623 18:41:43.141" endtime="20210623 18:41:43.185"/>
+</kw>
+<status status="PASS" starttime="20210623 18:41:43.141" endtime="20210623 18:41:43.185"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=table th</arg>
+<arg>should be</arg>
+<arg>Id</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210623 18:41:43.186" endtime="20210623 18:41:43.203"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it.</doc>
+<msg timestamp="20210623 18:41:43.342" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-11.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210623 18:41:43.204" endtime="20210623 18:41:43.342"/>
+</kw>
+<tag>exclusão</tag>
+<status status="PASS" starttime="20210623 18:41:40.336" endtime="20210623 18:41:43.343"/>
+</test>
+<doc>Suite de testes de Cadastro de Usuários</doc>
+<status status="PASS" starttime="20210623 18:41:10.240" endtime="20210623 18:41:43.357"/>
+</suite>
+<statistics>
+<total>
+<stat pass="11" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">completo</stat>
+<stat pass="1" fail="0" skip="0">completo2</stat>
+<stat pass="3" fail="0" skip="0">email</stat>
+<stat pass="1" fail="0" skip="0">exclusão</stat>
+<stat pass="1" fail="0" skip="0">incompleto</stat>
+<stat pass="1" fail="0" skip="0">nome</stat>
+<stat pass="1" fail="0" skip="0">senha</stat>
+<stat pass="1" fail="0" skip="0">todos</stat>
+</tag>
+<suite>
+<stat pass="11" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210623 18:41:10.410" level="WARN">Imported resource file 'C:\Prova\resources\actions\nav.robot' is empty.</msg>
+</errors>
+</robot>
